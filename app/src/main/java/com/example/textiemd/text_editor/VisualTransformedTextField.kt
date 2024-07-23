@@ -31,14 +31,16 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
-
+import androidx.compose.ui.geometry.Offset
 @Composable
 fun VisualTransformedTextField(modifier: Modifier = Modifier) {
     var text by remember { mutableStateOf("") }
@@ -54,7 +56,18 @@ fun VisualTransformedTextField(modifier: Modifier = Modifier) {
             if (headline.isEmpty()) {
                 Text(
                     text = "Enter Headline here...",
-                    style = MaterialTheme.typography.headlineMedium.copy(color = Color.Gray).copy(fontWeight = FontWeight.Bold)
+                    style = MaterialTheme.typography.headlineMedium.copy(color = Color.Gray).copy(
+                        fontWeight = FontWeight.Bold,
+                    ),
+                    modifier = Modifier.drawBehind {
+                        val lineThickness =4.dp.toPx() // Adjust thickness as needed
+                        val yPosition = size.height - lineThickness / 2
+                        drawLine(
+                            color = Color.Black, // Or any color you prefer
+                            start = Offset(0f, yPosition),end = Offset(size.width, yPosition),
+                            strokeWidth = lineThickness
+                        )
+                    }
                 )
             }
 
@@ -62,7 +75,18 @@ fun VisualTransformedTextField(modifier: Modifier = Modifier) {
                 value = headline,
                 onValueChange = { headline = it },
                 visualTransformation = visualTransformation,
-                textStyle = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold)
+                textStyle = MaterialTheme.typography.headlineMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                ),
+                modifier = Modifier.drawBehind {
+                    val lineThickness = 4.dp.toPx() // Adjust thickness as needed
+                    val yPosition = size.height - lineThickness / 2
+                    drawLine(
+                        color = Color.Black, // Or any color you prefer
+                        start = Offset(0f, yPosition),end = Offset(size.width, yPosition),
+                        strokeWidth = lineThickness
+                    )
+                }
             )
         }
 
