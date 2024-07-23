@@ -1,9 +1,9 @@
 package com.example.textiemd
 
-import MainScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import com.example.textiemd.text_editor.VisualTransformedTextField
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
