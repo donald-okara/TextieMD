@@ -66,7 +66,7 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.4.0")
 
     implementation("com.github.donald-okara:TextieMD:1.0.0")
-    implementation(project(":textiemd"))
+    implementation(project(":TextieMD"))
     //implementation(project(":textiemd"))
 
     testImplementation(libs.junit)

@@ -46,8 +46,8 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 from(components["release"]) // Use the 'release' component
                 groupId = "com.github.donald-okara"
-                artifactId = "textiemd"
-                version = "1.0.1"
+                artifactId = "TextieMD"
+                version = "1.0.2"
             }
         }
     }

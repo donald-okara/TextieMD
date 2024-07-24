@@ -22,4 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Textie MD"
 include(":app")
-include(":textiemd")
+include(":TextieMD")
