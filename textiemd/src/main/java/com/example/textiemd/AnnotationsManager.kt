@@ -1,4 +1,4 @@
-package com.example.textiemd.text_editor
+package com.example.textiemd
 
 import android.util.Log
 

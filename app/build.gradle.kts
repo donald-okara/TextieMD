@@ -65,6 +65,7 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.6.1")
     implementation("io.coil-kt:coil-compose:2.4.0")
 
+    implementation(project(":textiemd"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
