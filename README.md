@@ -25,3 +25,5 @@ This project features a `VisualTransformedTextField` composable that integrates 
 - The `TextEditorVisualTransformer` implementation is inspired by [Learning to Code](https://learning-to-code.hashnode.dev/richtext-editor-in-jetpack-compose-1).
 
 For complete code, please refer to the provided implementations.
+
+[Video](Screen_recording_20240724_113848.webm)

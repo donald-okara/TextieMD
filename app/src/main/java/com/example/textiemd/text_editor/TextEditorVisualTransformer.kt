@@ -37,7 +37,7 @@ fun transformHeading(text: AnnotatedString): Transformation {
             val headingLevel = getHeadingLevel(match.value)
             val sizeList = listOf(32.sp, 28.sp, 24.sp, 18.sp)
             builder.addStyle(
-                style = SpanStyle(color = Color.Gray, baselineShift = BaselineShift.Superscript, fontSize = sizeList[headingLevel - 1] / 4),
+                style = SpanStyle(color = Color.Transparent, baselineShift = BaselineShift.Superscript, fontSize = sizeList[headingLevel - 1] / 4),
                 matchRange.first,
                 matchRange.first + headingLevel
             )
@@ -60,13 +60,13 @@ fun transformItalics(text: AnnotatedString): Transformation {
         for (match in matches) {
             val matchRange = match.range
             builder.addStyle(
-                style = SpanStyle(color = Color.Gray, baselineShift = BaselineShift.Superscript, fontSize = 10.sp),
+                style = SpanStyle(color = Color.Transparent, baselineShift = BaselineShift.Superscript, fontSize = 0.0.sp),
                 matchRange.first,
                 matchRange.first + 2
             )
             builder.addStyle(style = SpanStyle(fontStyle = FontStyle.Italic), matchRange.first + 2, matchRange.last - 1)
             builder.addStyle(
-                style = SpanStyle(color = Color.Gray, baselineShift = BaselineShift.Superscript, fontSize = 10.sp),
+                style = SpanStyle(color = Color.Transparent, baselineShift = BaselineShift.Superscript, fontSize = 0.0.sp),
                 matchRange.last - 1,
                 matchRange.last + 1
             )
@@ -84,13 +84,13 @@ fun transformBold(text: AnnotatedString): Transformation {
         for (match in matches) {
             val matchRange = match.range
             builder.addStyle(
-                style = SpanStyle(color = Color.Gray, baselineShift = BaselineShift.Superscript, fontSize = 10.sp),
+                style = SpanStyle(color = Color.Transparent, baselineShift = BaselineShift.Superscript, fontSize = 0.0.sp),
                 matchRange.first,
                 matchRange.first + 2
             )
             builder.addStyle(style = SpanStyle(fontWeight = FontWeight.Bold), matchRange.first + 2, matchRange.last - 1)
             builder.addStyle(
-                style = SpanStyle(color = Color.Gray, baselineShift = BaselineShift.Superscript, fontSize = 10.sp),
+                style = SpanStyle(color = Color.Transparent, baselineShift = BaselineShift.Superscript, fontSize = 0.0.sp),
                 matchRange.last - 1,
                 matchRange.last + 1
             )
@@ -122,5 +122,6 @@ private fun getHeadingLevel(text: String): Int {
     }
     return i
 }
+
 
 data class Transformation(val annotatedString: AnnotatedString, val offsetMapping: OffsetMapping)
